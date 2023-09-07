@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+              let a = [10,39,32];
+                  a[0] = 20
+                  let b = a
+                  b[1] = 40;
+                  console.log(a);
+              // deep copy / pass by value by level one
+              // let obj1 = {name:'Mudassir Hussain',age:23}
+              // obj = {...obj1};
+              // obj.friend ='Chandia'
+              // console.log(obj);
+              // console.log(obj1);
+
+
+              // deep copy / pass by value by level Two
+              // let obj1 = {name:'Mudassir Hussain',age:23,designation:{currunt:'Trainee Software Engineer',location:'Lahore'}}
+              // let obj = {...obj1};
+              // obj.designation.currunt = 'Software Engineer'
+              // console.log(obj);
+              // console.log(obj1);
+
+
+              // deep copy / pass by value by level Three
+              let obj = {name:'Mudassir Hussain',age:23,designation:{position:'Trainee Software Engineer',location:'Lahore',sum:function(){
+                  console.log('Helo JavaScript');
+              }}}
+              let obj1 = JSON.parse(JSON.stringify(obj));
+              obj.designation.position = 'Software Engineer'
+              console.log(obj);
+              console.log(obj1);       
+    </script>
+  </body>
+</html>

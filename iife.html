@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      // Q:1 kia iife global execution or execution ka part ha????????????
+    //   setTimeout(()=>{
+    //     (function(){
+    //     console.log('iffe');
+    //   })()
+    //   },3000) 
+    //   console.log('afaq chawal');
+
+    //   setTimeout (()=>{
+    //     (function(){
+    //         console.log('chawal to afaq hi ha');
+    //     })()
+    //   },2000)
+
+        let a = 10; 
+      (function (){
+        console.log(a);
+      })();
+
+      (function (){
+        console.log(a);
+      })();
+
+      function abc(){
+        var b = 10;
+      }
+    //   console.log(b);
+
+      //
+      let iife = (function (){
+        let count = 0;
+        
+       function countInc(){
+        count++
+       }
+       return {
+        count:count,
+        countInc:countInc,
+       };
+      })()
+      console.log(iife.count( ));
+      iife.countInc()
+    //   console.log(iife.countInc);
+    </script>
+</body>
+</html>

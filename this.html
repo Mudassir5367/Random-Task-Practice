@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // MDN
+        // const test = {
+        //     prop:12,
+        //     func:function(){
+        //         return this.prop
+        //     },
+        // };
+        // console.log(test.func());
+
+        // //
+        // function getThis(){
+        //     return this 
+        // }
+
+        // const obj1 = {name:'obj1'}
+        // const obj2 = {name:'obj2'}
+
+        // obj1.getThi = getThis;
+        // obj2.getThis = getThis;
+        // console.log(obj1.getThi());
+        // console.log(obj2.getThis());
+
+        // thapa
+        // console.log(this); // this refers to the global object means window object
+        //     function sum(){
+        //         let a = 2+2;
+        //         console.log(a);
+        //         console.log(this); // there also it refers to the global object means window object
+        //     }
+        //     sum()
+
+            // let obj = {
+            //     a :'abc',
+            //     b:'xyz',
+            //     func:function (){
+            //         let sum = 2+2;
+            //         console.log(sum);
+            //         console.log(this); // there it return its owner object;
+            //         console.log(this.a);
+            //     }
+            // }
+            // obj.func()
+
+            // let obj1 = {
+            //     naam : 'naam',
+            //     innerObj:{
+            //         innerName:'innerName',
+            //         funct(){
+            //             let sumNum = 1 + 2;
+            //             console.log(sumNum);
+            //             console.log(this);
+            //         }
+            //     }
+            // }
+            // obj1.innerObj.funct()
+            // obj1.innerFunc = function (){
+            //     console.log(this);
+            // }
+            // obj1.innerFunc()
+            
+    </script>
+    <script>
+        // use strict mode
+        // 'use strict'
+        // function strict(){
+        //     let data = 1 + 2;
+        //     console.log(data);
+        //     console.log(this);
+        // }
+        // strict()
+
+
+        // this use in classe
+        // title in parameters means its a contructor 
+        // function clas(title){
+        //     this.title = title;
+        //     console.log(this);
+        // }
+        // let c = new clas()
+        // let c = new clas('Birthday')
+
+
+        // 
+        let obj = {
+            title:'a',
+            tags:['a','b','c'],
+            showTag(){
+                this.tags.forEach(tag => {
+                    console.log(this.title,tag);
+                });
+            }
+        }
+        obj.showTag()
+    </script>
+</body>
+</html>

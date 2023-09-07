@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let curring = function(a){
+            return function(b){
+                return function(c){
+                    return function(d){
+                        return a + b + c + d;
+                    }
+                }
+            }
+        }
+        let result2 = curring(10)(15)
+        result2(8)(6)
+        let result = curring(10)(20)(30)(40);
+        console.log(result);
+
+
+        let tableUpTo= curring(20)
+        
+
+        // let factorial = function (a){
+        //     return function (b){
+        //         if(b) return (a*b)
+        //     }
+        // }
+        // let result = factorial(5)(5)
+        // console.log(result);
+
+        
+
+    </script>
+</body>
+</html>

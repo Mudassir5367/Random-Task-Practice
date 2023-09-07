@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function over loading => js over loading ko support nai krti so ye over ride kr deta ha 
+        function sum(a, b, c) {
+    return a + b + c;
+}
+console.log(sum(1, 2, 3));
+function sum(x, y) {
+    return x + y;
+}
+console.log(sum(1, 2, 3));
+    </script>
+</body>
+</html>

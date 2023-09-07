@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Q:1 original bhi jab same value dy rhi ha to ham spread q use kr rhy hain
+        // Ans: uski waja ye ha k spread use na kren to orginal bhi change ho jati ha spread k use sy nai hoti example given hai.
+        // spread
+        // let arr = [1,2,3,4]
+        // function changeArr(...data){
+        //     data[0] = 10
+        //     console.log(data);
+        // }
+        // let result = changeArr(...arr)
+        // console.log(arr);
+
+        // // Rest Operator
+        // let rest = ['JS','c++','java']
+        // const[java,...updateData] = rest; // [rest]=> for all data in array form]
+        // console.log(java);
+        // console.log(updateData);
+
+
+//         function sumAll(...val) {
+//       console.log(val)
+//        let sum = 0;
+//      for(let i = 0; i<=val.length; i++){
+//        sum = sum+val[i]
+//        console.log(sum)
+//    }
+// }
+//  sumAll(1,2,3,4,5,6,77,8,8,)
+
+//  function sumAll(...val) {
+//       console.log(val)
+//     //    let sum = 0;
+//     //  for(let i = 0; i<=val.length; i++){
+//         for(let arr of val){
+//        sum = sum+arr[i]
+//        console.log(sum)
+//    }
+// }
+//  sumAll(1,2,3,4,5,6,77,8,8,)
+
+// spread object 
+// let obj1 = { kuch: 'Haseeb', ali: 22 };
+// let obj2 = { name: 'abc', age: 12 };
+// let obj = { ...obj1, ...obj2 };
+// console.log(obj);
+
+// spread function
+let arr = ['Haseeb',5,8];
+// arr[0] = [100]
+function abc(a,b,c) {
+    console.log(a,b,c)
+}
+abc(...arr)
+console.log(arr);
+
+
+
+// let arr1 = [1,2,3,4]
+// let arr2 = [...arr1];
+// arr2[0] = 'Mudassir Husain'
+// console.log(arr1);
+// console.log(arr2);
+
+
+const aa = [[1], [2], [3]];
+        const b = [...aa];
+        console.log(aa);
+        console.log(b);
+
+
+ 
+    </script>
+</body>
+</html>
