@@ -7,6 +7,57 @@
 </head>
 <body>
     <script>
+        // Four topic about this behaviour give by Sir Touqeer shab
+        // 1-Regular function => this behave in global window object.
+        function regular(){
+            console.log(this);
+        }
+        regular()
+
+        // 2-object => in object this behaviour in regular function give object properties
+        let object = {
+            n:'abc',age:12,
+            objFunc(){
+                console.log(this);
+            }
+        }
+        object.objFunc()
+
+        // 3-aerrow function => there This behave is global object it give window object
+        let arreow = {
+            aName:'aerrow',add:'Multan',
+            aerrowFunc :()=>{
+                console.log(this);
+            }
+        }
+        arreow.aerrowFunc();
+
+        // 4- make object then inside object make simple function then inside this make aerrow function What is the behave of This??????????
+
+        console.log('simple');
+        let objTest = {
+            see:'biz',age:5,
+            simpleFunc(){
+                simpleName='simpleeee';
+                console.log(this);
+                let aerroeInSimple=()=>{
+                    aerroeName:'aerrowName';
+                    console.log(this);
+                }
+                aerroeInSimple()
+                console.log(simpleName);
+            },
+             aerrowOther: () => {
+                console.log('outer from simple',this);
+            }
+        }
+        objTest.simpleFunc();
+        objTest.aerrowOther()
+
+        console.log('simple');
+
+
+
         // MDN
         // const test = {
         //     prop:12,
