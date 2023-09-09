@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let productPrice = [100,200,300,400,500];
+        let taxRate = (5/100) * productPrice[1];
+        let shipCharges = 100;
+        // let curring = (productPrice) =>{
+        //     console.log('Product Price is: ',productPrice[1]);
+        //     return (taxRate)=>{
+        //         console.log('taxRate: ',taxRate);
+        //         return (shipCharges)=>{
+        //             console.log('shipCharges: ',shipCharges);
+        //             return productPrice[1] + taxRate + shipCharges;
+        //         }
+        //     }
+        // } 
+        // let total = curring(productPrice)(taxRate)(shipCharges)
+        // console.log('Total is: ',total);
+    // console.log(curring(productPrice)(taxRate)(shipCharges));
+
+    productPrice.reduce(()=>{
+         let curring = (productPrice)=>{
+            // data = data+curr[1]
+            console.log('product price : ',productPrice[1]);
+            return (taxRate)=>{
+                console.log('tax is : ',taxRate);
+                return (shipCharges)=>{
+                    console.log('shipping charges : ',shipCharges);
+                    return productPrice[1] + taxRate + shipCharges
+                }
+            }
+         }
+         let total = curring(productPrice)(taxRate)(shipCharges);
+         console.log('Total is: ',total);
+        // console.log(curr);
+    })
+    // console.log(newArr);
+    // </script>
+</body>
+</html>
