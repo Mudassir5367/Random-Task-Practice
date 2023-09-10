@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Anagram String</h1>
+    <script>
+        let anagram = (str1,str2) =>{
+            let objStr = {}
+            for(let arr of str1){
+                objStr[arr] = (objStr[arr] || 0) + 1;
+            }
+            for(let arr of str2){
+                if(!objStr[arr]){
+                    return false
+                }
+                objStr[arr]--
+            }
+            return true
+            console.log(objStr);
+        }
+       let result = anagram('hello','ehllo')
+       console.log(result);
+    </script>
+</body>
+</html>
