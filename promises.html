@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Promises</h1>
+    <script>
+
+        // example-1
+        // let myPromise = new Promise((resolve,reject)=>{
+        //    setTimeout(()=>{
+        //     const success = true;
+        //     if(success){
+        //         reject('Congratulations! The request is resolved')
+        //     }else{
+        //         reject('The request is rejeted')
+        //     }
+        // },1000)
+        //    })
+        //    console.log(myPromise);
+        // myPromise.then((result)=>{
+        //     console.log('seccess',result);
+        // }).catch((error)=>{
+        //     console.log('Error',error);
+        // })
+
+
+        // Example-2
+        // let promise = new Promise((resolve,reject)=>{
+        //     console.log('Resolve Working');
+        //     resolve(20)
+        // })
+        // console.log(promise);
+
+
+        // Example-3
+        let p1 = new Promise((res,rej)=>{
+            console.log('promise pending');
+            setTimeout(() => {
+                console.log('I am the promises resolved');
+                res(12)
+            }, 2000);
+        })
+        let p2 = new Promise((res,rej)=>{
+            console.log('promise pending');
+            setTimeout(() => {
+                console.log('I am the promise rejected');
+                rej(new Error('I am the Error'))
+            }, 2000);
+        })
+        console.log(p1);
+        p1.then((value=>{
+            console.log(value);
+        })).catch((error)=>{
+            console.log(error);
+        })
+        p2.then((value)=>{
+            console.log(value);
+        })
+        .catch((error)=>{
+            console.log('Error Occuring and I can control the error');
+        })
+
+
+
+        // Example-4
+        // let p3 = new Promise((res,rej)=>{
+        //     console.log('promises resolved ');
+        //     setTimeout(() => {
+        //         console.log('promises resolved after 2 second');
+        //         res(56)
+        //     }, 2000);
+        // })
+        // p3.then((value)=>{
+        //     console.log(value);
+        //     let p4 = new Promise((resolve, reject) => {
+        //         console.log('inner promise');
+        //         setTimeout(() => {
+        //             console.log('Promise 2');
+        //         }, 2000);
+        //     })
+        //     return p4
+        // }).then((value)=>{
+        //     console.log('we are done');
+
+        // })
+
+        
+        // setTimeOut ki waja sy pehly end ko print kr deta ha execution context mein daikha ja skta ha 
+        // function abc(){
+        //     setTimeout(()=>{
+        //         console.log('hi');
+        //     },0)
+        // }
+        // abc()
+        // console.log('end');
+       
+    </script>
+</body>
+</html>
