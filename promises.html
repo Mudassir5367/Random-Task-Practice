@@ -9,12 +9,20 @@
     <h1>Promises</h1>
     <script>
 
+        // let data_API = "https://jsonplaceholder.typicode.com/posts";
+        // let user = fetch(data_API);
+        // console.log(user);
+        // user.then((data)=>{
+        //     console.log(data);
+        // })
+
+
         // example-1
         // let myPromise = new Promise((resolve,reject)=>{
         //    setTimeout(()=>{
         //     const success = true;
         //     if(success){
-        //         reject('Congratulations! The request is resolved')
+        //         resolve('Congratulations! The request is resolved')
         //     }else{
         //         reject('The request is rejeted')
         //     }
@@ -37,56 +45,100 @@
 
 
         // Example-3
-        let p1 = new Promise((res,rej)=>{
-            console.log('promise pending');
-            setTimeout(() => {
-                console.log('I am the promises resolved');
-                res(12)
-            }, 2000);
-        })
-        let p2 = new Promise((res,rej)=>{
-            console.log('promise pending');
-            setTimeout(() => {
-                console.log('I am the promise rejected');
-                rej(new Error('I am the Error'))
-            }, 2000);
-        })
-        console.log(p1);
-        p1.then((value=>{
-            console.log(value);
-        })).catch((error)=>{
-            console.log(error);
-        })
-        p2.then((value)=>{
-            console.log(value);
-        })
-        .catch((error)=>{
-            console.log('Error Occuring and I can control the error');
-        })
+        // let p1 = new Promise((res,rej)=>{
+        //     console.log('promise pending');
+        //     setTimeout(() => {
+        //         console.log('I am the promises resolved');
+        //         res(12)
+        //     }, 2000);
+        // })
+        // let p2 = new Promise((res,rej)=>{
+        //     console.log('promise pending');
+        //     setTimeout(() => {
+        //         console.log('I am the promise rejected');
+        //         rej(new Error('I am the Error'))
+        //     }, 2000);
+        // })
+        // console.log(p1);
+        // p1.then((value=>{
+        //     console.log(value);
+        // })).catch((error)=>{
+        //     console.log(error);
+        // })
+        // p2.then((value)=>{
+        //     console.log(value);
+        // })
+        // .catch((error)=>{
+        //     console.log('Error Occuring and I can control the error');
+        // })
 
 
 
         // Example-4
-        // let p3 = new Promise((res,rej)=>{
-        //     console.log('promises resolved ');
+        // let pro = new Promise((res,rej)=>{
+        //     let a = true;
         //     setTimeout(() => {
-        //         console.log('promises resolved after 2 second');
-        //         res(56)
+        //         if(!a){
+        //             res(12)
+        //         }else{
+        //             rej(new Error())
+        //         }
         //     }, 2000);
         // })
-        // p3.then((value)=>{
+        // console.log(pro);
+        // pro.then((value)=>{
         //     console.log(value);
-        //     let p4 = new Promise((resolve, reject) => {
-        //         console.log('inner promise');
-        //         setTimeout(() => {
-        //             console.log('Promise 2');
-        //         }, 2000);
-        //     })
-        //     return p4
-        // }).then((value)=>{
-        //     console.log('we are done');
-
+        // }).catch((error)=>{
+        //     console.log(error);
         // })
+
+
+
+
+        // Example-5    
+        let p3 = new Promise((res,rej)=>{
+            console.log('promises resolved ');
+            setTimeout(() => {
+                console.log('promises resolved after 2 second');
+                res(56)
+            }, 2000);
+        })
+        p3.then((value)=>{
+            console.log(value);
+            let p4 = new Promise((resolve, reject) => {
+                console.log('inner promise');
+                setTimeout(() => {
+                    console.log('Promise 2');
+                    resolve(12)
+                }, 2000);
+            })
+            return p4
+        }).then((value)=>{
+            console.log('we are done');
+
+        })
+
+
+
+        // Example-6
+        // let p5 = new Promise((res,rej)=>{
+        //     let a = 10
+        //     setTimeout(() => {
+        //         if(a>9){
+        //             res(12)
+        //         }else{
+        //             rej(new Error('I am the error plz respect me'))
+        //         }
+        //     }, 2000);
+        // })
+        // p5.then((value)=>{
+        //     console.log(value);
+        //      return p6 = value * 10;
+        //    p6.then((value)=>{
+        //         console.log(value);
+        //     })
+        // })
+        // console.log(p5);
 
         
         // setTimeOut ki waja sy pehly end ko print kr deta ha execution context mein daikha ja skta ha 
