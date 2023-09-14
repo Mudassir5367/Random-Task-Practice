@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // simple example
+    //    function add (a,b){
+    //     let sum = a+b;
+    //     display(sum)
+    //    }
+    //    add(2,3)
+    //    function display(a){
+    //     console.log(a);
+    //    }
+
+    //    // Example-1
+    //    function addNum(a,b,callback){
+    //     let sum = a+b;
+    //     callback(sum)
+    //    }
+    //    addNum(3,4,display)
+
+
+       // Example-2
+    //    let arr = [4, 1, -20, -7, 5, 9, -6]
+    //   let value = removeNeg(arr,
+    //   (x)=>x>=0) 
+    //   console.log(value);
+    //    function removeNeg(data,callback){
+    //     let newArr = []
+    //     for(let arr of data){
+    //         if(callback(arr)){
+    //             newArr.push(arr)
+    //         }
+    //     }
+    //     return newArr;
+    //    }
+
+
+       // Example-3 => map 
+    //    let arr1 = [4,5,2,1,7]
+    //    let newArr = arr1.map((data)=>{
+    //     return data*2;
+    //    })
+    //    console.log(arr1);
+    //    console.log(newArr);
+
+    //     // with other method by simple function
+    //     let newArr1 = arr1.map(function (x){
+    //         // console.log(arr1);
+    //         return x * 3
+    //     })
+    //     console.log('simple function : ',newArr1);
+
+
+        // Example-4 setTimeout
+        setTimeout(fn,2000)
+        function fn(){
+            console.log('setTimeout working');
+        }
+        function kuchBhi(data){
+            data()
+            console.log('kuch bhi');
+        }
+        kuchBhi(fn)
+      
+
+    </script>
+</body>
+</html>

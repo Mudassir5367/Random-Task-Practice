@@ -96,48 +96,50 @@
 
 
         // Example-5    
-        let p3 = new Promise((res,rej)=>{
-            console.log('promises resolved ');
-            setTimeout(() => {
-                console.log('promises resolved after 2 second');
-                res(56)
-            }, 2000);
-        })
-        p3.then((value)=>{
-            console.log(value);
-            let p4 = new Promise((resolve, reject) => {
-                console.log('inner promise');
-                setTimeout(() => {
-                    console.log('Promise 2');
-                    resolve(12)
-                }, 2000);
-            })
-            return p4
-        }).then((value)=>{
-            console.log(value);
+        // let p3 = new Promise((res,rej)=>{
+        //     console.log('promises resolved ');
+        //     setTimeout(() => {
+        //         console.log('promises resolved after 2 second');
+        //         res(56)
+        //     }, 2000);
+        // })
+        // p3.then((value)=>{
+        //     console.log(value);
+        //     let p4 = new Promise((resolve, reject) => {
+        //         console.log('inner promise');
+        //         setTimeout(() => {
+        //             console.log('Promise 2');
+        //             resolve(12)
+        //         }, 2000);
+        //     })
+        //     return p4
+        // }).then((value)=>{
+        //     console.log(value);
 
-        })
+        // })
 
 
 
         // Example-6
-        // let p5 = new Promise((res,rej)=>{
-        //     let a = 10
-        //     setTimeout(() => {
-        //         if(a>9){
-        //             res(12)
-        //         }else{
-        //             rej(new Error('I am the error plz respect me'))
-        //         }
-        //     }, 2000);
-        // })
-        // p5.then((value)=>{
-        //     console.log(value);
-        //      return p6 = value * 10;
-        //    p6.then((value)=>{
-        //         console.log(value);
-        //     })
-        // })
+        let p5 = new Promise((res,rej)=>{
+            let a = 10
+            setTimeout(() => {
+                if(a>9){
+                    res(12)
+                }else{
+                    rej(new Error('I am the error plz respect me'))
+                }
+            }, 2000);
+        })
+        p5.then((value)=>{
+            console.log(value);   
+            return value * 10;       
+        }).then((val)=>{
+            console.log(val);
+            return val * 10;
+        }).then((val1)=>{
+            console.log(val1);
+        })
         // console.log(p5);
 
         
