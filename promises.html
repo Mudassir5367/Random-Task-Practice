@@ -121,26 +121,57 @@
 
 
         // Example-6
-        let p5 = new Promise((res,rej)=>{
-            let a = 10
-            setTimeout(() => {
-                if(a>9){
-                    res(12)
-                }else{
-                    rej(new Error('I am the error plz respect me'))
-                }
-            }, 2000);
-        })
-        p5.then((value)=>{
-            console.log(value);   
-            return value * 10;       
-        }).then((val)=>{
-            console.log(val);
-            return val * 10;
-        }).then((val1)=>{
-            console.log(val1);
-        })
+        // let p5 = new Promise((res,rej)=>{
+        //     let a = 10
+        //     setTimeout(() => {
+        //         if(a>9){
+        //             res(12)
+        //         }else{
+        //             rej(new Error('I am the error plz respect me'))
+        //         }
+        //     }, 2000);
+        // })
+        // p5.then((value)=>{
+        //     console.log(value);   
+        //     return value * 10;       
+        // }).then((val)=>{
+        //     console.log(val);
+        //     return val * 10;
+        // }).then((val1)=>{
+        //     console.log(val1);
+        // })
         // console.log(p5);
+
+
+
+        // Example-7
+
+        let task1 = new Promise((res,rej)=>{
+            setTimeout(() => {
+                res('Buy meat')
+            }, 1000);
+        })
+       
+        task1.then((result)=>{
+            console.log(result);
+            
+            let task2 = new Promise((res,rej)=>{
+            setTimeout(() => {
+                res('Cut meat into pieces')
+            }, 1000);
+        })
+        return task2;
+        }).then((result)=>{
+            console.log(result);
+            task3 = new Promise((res,rej)=>{
+                setTimeout(() => {
+                    res('Cooking Beef')
+                }, 1000);
+            })
+            return task3
+        }).then((result)=>{
+            console.log(result);
+        })
 
         
         // setTimeOut ki waja sy pehly end ko print kr deta ha execution context mein daikha ja skta ha 
