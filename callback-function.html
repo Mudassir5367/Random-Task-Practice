@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
+
+    <button id="click">Click Me</button>
     <script>
         // simple example
     //    function add (a,b){
@@ -57,7 +59,12 @@
     //     console.log('simple function : ',newArr1);
 
 
-        // Example-4 setTimeout
+        // Example-4 setTimeout  Best
+
+        setTimeout(() => {
+            console.log('3000');
+        }, 3000);
+
         setTimeout(fn,2000)
         function fn(){
             console.log('setTimeout working');
@@ -67,7 +74,34 @@
             console.log('kuch bhi');
         }
         kuchBhi(fn)
+
+
+
       
+        // Example-5 
+        setTimeout(() => {
+            console.log('timer');
+        }, 2000);
+
+        function x(y){
+            console.log('x');
+            y()
+        }
+        x(function y(){
+            console.log('y');
+        })
+
+
+
+        // Example-6
+        function attchFunc(){
+            let count = 0;
+        document.getElementById('click')
+        .addEventListener('click',((xyz)=>{
+            console.log('Button clicked',count++);
+        }))
+        }
+        attchFunc()
 
     </script>
 </body>
