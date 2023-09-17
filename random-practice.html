@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function test(){
+            c = 1;
+            let count = 1;
+            for( ; ;){
+            setTimeout(()=>{
+                    console.log('statement pass ' + c, count++);
+                },1000 * c);
+                
+                if(c === 5) break;           
+                else c++
+            }
+        }
+        test()
+    </script>
+</body>
+</html>

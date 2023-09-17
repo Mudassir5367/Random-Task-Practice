@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Example-1
+       async function abc(){
+        const p1 = new Promise((res,rej)=>{
+            setTimeout(() => {
+                res(12)
+            }, 2000);
+        })
+        const p2 = new Promise((res,rej)=>{
+            setTimeout(() => {
+                res(56)
+            }, 4000);
+        })
+
+        console.log('p1 value accessing plz wait ...');
+        const result1 = await p1;
+        console.log('value of p1 is: ',result1);
+        console.log('p1 vale is accesing plz wait ...');
+        const result2 = await p2;
+        console.log('value of p2 is: ', result2);
+        return [result1,result2]
+
+       }
+       const xyz = async()=>{
+        console.log('I am not waitng this is my era');
+       }
+      const parnet = async ()=>{
+        const fn1 = await abc();
+       const fn2 = await xyz()
+      }
+      parnet()
+    </script>
+</body>
+</html>
