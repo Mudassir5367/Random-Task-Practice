@@ -7,36 +7,123 @@
 </head>
 <body>
     <script>
-        // Example-1
-       async function abc(){
-        const p1 = new Promise((res,rej)=>{
-            setTimeout(() => {
-                res(12)
-            }, 2000);
-        })
-        const p2 = new Promise((res,rej)=>{
-            setTimeout(() => {
-                res(56)
-            }, 4000);
-        })
+        // Example-1 simple 
+        // async function simpleAsync(){
+        //     return 'This is Async functon'
+        // }
+        // // console.log(simpleAsync());
+        // const dataPromise = simpleAsync()
+        // // console.log(dataPromise);
+        // dataPromise.then((value)=>{
+        //     console.log(value);
+        // })
 
-        console.log('p1 value accessing plz wait ...');
-        const result1 = await p1;
-        console.log('value of p1 is: ',result1);
-        console.log('p1 vale is accesing plz wait ...');
-        const result2 = await p2;
-        console.log('value of p2 is: ', result2);
-        return [result1,result2]
 
-       }
-       const xyz = async()=>{
-        console.log('I am not waitng this is my era');
-       }
-      const parnet = async ()=>{
-        const fn1 = await abc();
-       const fn2 = await xyz()
-      }
-      parnet()
+
+
+
+        // Example-2
+    //    async function abc(){
+    //     const p1 = new Promise((res,rej)=>{
+    //         setTimeout(() => {
+    //             res(12)
+    //         }, 2000);
+    //     })
+    //     const p2 = new Promise((res,rej)=>{
+    //         setTimeout(() => {
+    //             res(56)
+    //         }, 4000);
+    //     })
+    //     console.log('p1 value accessesing plz wait ...');
+    //     const result1 = await p1;
+    //     console.log('value of p1 is: ',result1);
+    //     console.log('p2 value accessesing plz wait ...');
+    //     const result2 = await p2;
+    //     console.log('value of p2 is: ',result2);
+
+    //     return [result1,result2]
+    //    }
+
+    //    const xyz = async()=>{
+    //     console.log('Yes I can wait');
+    //    }
+    //    const main = async()=>{
+    //     const fn1 = await abc()
+    //    const fn2 = await xyz()
+       
+       
+    //    }
+    //    main()
+
+    //    const result =
+    //    result.then((value)=>{
+    //     console.log(value);
+    //    }).catch((error)=>{
+    //     console.log('we can handle error');
+    //    })
+
+
+
+
+
+    // Example-3          N-JS
+    // const p = new Promise((res,rej)=>{
+    //     res('Promise Resolved Value!')
+    // })
+
+    // async function getData(){
+    //     return p;
+    // }
+    // const pData = getData()
+    // pData.then((value)=>{
+    //     console.log(value);
+    // })
+
+
+
+
+    
+
+    // Example-4 Most Important Example 
+    const p1 = new Promise((res,rej)=>{
+        setTimeout(() => {
+            res('Promise Resolved Value')
+        }, 7000);
+    })
+
+    const p2 = new Promise((res,rej)=>{
+        setTimeout(() => {
+            res('Promise Resolved Value')
+        }, 5000);
+    })
+
+    // With Async Await
+    async function handlePromise(){
+        console.log('Welcome to Async Await');
+        const val1 = await p1;
+        console.log('async await value print');
+        console.log(val1);
+
+        const val2 = await p2;
+        console.log('async await value print');
+        console.log(val2);
+    }
+    handlePromise()
+
+
+
+    // with simple handling promise by use of then
+
+//    function getDataSimple(){
+//     p.then((value)=>{
+//         console.log(value);
+//     })
+//     console.log('JS engine can not wait in then method');
+//    }
+//    getDataSimple()
+
+
+       
     </script>
 </body>
 </html>
