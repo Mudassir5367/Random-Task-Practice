@@ -85,45 +85,45 @@
 
 
 
-const data = {
-  'multan-lahore': { price: 150, timing: '8:00 PM' },
-  'sheikhupura-lahore': { price: 150, timing: '8:00 AM' },
-  'multan-mianwali': { price: 600, timing: '9:30 AM' },
-  'karachi-lahore': { price: 1000, timing: '11:45 PM' },
-};
+// const data = {
+//   'multan-lahore': { price: 150, timing: '8:00 PM' },
+//   'sheikhupura-lahore': { price: 150, timing: '8:00 AM' },
+//   'multan-mianwali': { price: 600, timing: '9:30 AM' },
+//   'karachi-lahore': { price: 1000, timing: '11:45 PM' },
+// };
 
-function trainDetails(currentCity, destination) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const key = `${currentCity.toLowerCase()}-${destination.toLowerCase()}`;
-      if (data[key]) {
-        resolve(data[key]);
-      } else {
-        reject('Train not found');
-      }
-    }, 1000);
-  });
-}
+// function trainDetails(currentCity, destination) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const key = `${currentCity.toLowerCase()}-${destination.toLowerCase()}`;
+//       if (data[key]) {
+//         resolve(data[key]);
+//       } else {
+//         reject('Train not found');
+//       }
+//     }, 1000);
+//   });
+// }
 
-function bookTicket() {
-  const currentCity = prompt('Enter the current city:');
-  const destination = prompt('Enter the destination city:');
+// function bookTicket() {
+//   const currentCity = prompt('Enter the current city:');
+//   const destination = prompt('Enter the destination city:');
 
-  if (currentCity && destination) {
-    trainDetails(currentCity, destination)
-      .then((value) => {
-        console.log(`Train Timing: ${value.timing}`);
-        console.log(`Ticket Price: ${value.price}`);
-      })
-      .catch((error) => {
-        console.error(`Error: ${error}`);
-      });
-  } else {
-    console.log('Invalid input. Please enter both currentCity and destination cities.');
-  }
-}
+//   if (currentCity && destination) {
+//     trainDetails(currentCity, destination)
+//       .then((value) => {
+//         console.log(`Train Timing: ${value.timing}`);
+//         console.log(`Ticket Price: ${value.price}`);
+//       })
+//       .catch((error) => {
+//         console.error(`Error: ${error}`);
+//       });
+//   } else {
+//     console.log('Invalid input. Please enter both currentCity and destination cities.');
+//   }
+// }
 
-bookTicket();
+// bookTicket();
     </script>
 </body>
 </html>

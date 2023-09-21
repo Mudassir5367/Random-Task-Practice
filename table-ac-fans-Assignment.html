@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function calculte(length, width) {
+      const tableWidth = 3;
+      const tableLength = 4;
+      const tableDistance = 0.5;
+      const fanDistance = 1;
+      const fanWidth = 0.5; 
+    //   const acCoverageArea = 10 * 10;
+    
+      const tableRows = Math.floor((width - 2 * tableDistance) / (tableLength + tableDistance));
+    
+      const tablesPerRow = Math.floor((length - 2 * tableDistance) / (tableWidth + tableDistance));
+    
+      const totalTables = tableRows * tablesPerRow;
+    
+      const fansRows = tableRows;
+    
+      const fansPerRow = Math.floor((length - 2 * tableDistance) / (fanWidth + fanDistance));
+    
+      const totalFans = fansRows * fansPerRow;
+    
+      const acUnitsPerRow = Math.floor(length / 10);
+    
+      const totalACUnits = tableRows * acUnitsPerRow;
+    
+      return {
+        totalTables,
+        totalFans,
+        totalACUnits,
+      };
+    }
+    
+    const workspaceDimensions = {
+      length: 67,
+      width: 54,
+    };
+    
+    const { totalTables, totalFans, totalACUnits } = calculte(workspaceDimensions.length, workspaceDimensions.width);
+    
+    console.log(`Total Tables: ${totalTables}`);
+    console.log(`Total Fans: ${totalFans}`);
+    console.log(`Total AC Units: ${totalACUnits}`);
+    
+        </script>
+</body>
+</html>
