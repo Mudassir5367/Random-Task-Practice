@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+        <li>ddd</li>
+    </div>
+    <p class="text" id="textId"></p>
+    
+    <script>
+        rootNode = document.documentElement;
+        let bodyEle = document.body;
+        let bodyChilds = document.body.children;
+        const a = document.getElementById('textId');
+        const b = document.getElementsByClassName('.text');
+        const d = document.getElementsByTagName('p');
+        const c = 10;
+        x = 20;
+        console.log(rootNode);
+        console.log(bodyEle);
+        // console.log(bodyChild[0]);
+        a.innerHTML = 'Hello ' + c;
+        b.innerHTML = 'Hello ' + x;
+        d.innerHTML = 'Hello ' + c;
+        // console.log(a);
+    </script>
+</body>
+</html>
