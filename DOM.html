@@ -13,7 +13,8 @@
         <li>ddd</li>
     </div>
     <p class="text" id="textId"></p>
-    
+    <input type="text" id="input">
+    <button id="btn" onclick="submit()">submit</button>
     <script>
         rootNode = document.documentElement;
         let bodyEle = document.body;
@@ -30,6 +31,12 @@
         b.innerHTML = 'Hello ' + x;
         d.innerHTML = 'Hello ' + c;
         // console.log(a);
+
+
+        function submit(){
+        const inputVal = document.getElementById('input').value; 
+            console.log(inputVal);
+        }
     </script>
 </body>
 </html>
