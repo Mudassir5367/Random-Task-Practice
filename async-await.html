@@ -17,6 +17,7 @@
         // dataPromise.then((value)=>{
         //     console.log(value);
         // })
+        
 
 
 
@@ -55,62 +56,62 @@
        }
        main()
 
-    //    const result =
-    //    result.then((value)=>{
+    // //    const result =
+    // //    result.then((value)=>{
+    // //     console.log(value);
+    // //    }).catch((error)=>{
+    // //     console.log('we can handle error');
+    // //    })
+
+
+
+
+
+    // // Example-3          N-JS
+    // const p = new Promise((res,rej)=>{
+    //     res('Promise Resolved Value!')
+    // })
+
+    // async function getData(){
+    //     return p;
+    // }
+    // const pData = getData()
+    // pData.then((value)=>{
     //     console.log(value);
-    //    }).catch((error)=>{
-    //     console.log('we can handle error');
-    //    })
-
-
-
-
-
-    // Example-3          N-JS
-    const p = new Promise((res,rej)=>{
-        res('Promise Resolved Value!')
-    })
-
-    async function getData(){
-        return p;
-    }
-    const pData = getData()
-    pData.then((value)=>{
-        console.log(value);
-    })
+    // })
 
 
 
 
     
 
-    // Example-4 Most Important Example 
-    const p1 = new Promise((res,rej)=>{
-        setTimeout(() => {
-            res('Promise Resolved Value-1')
-        }, 5000);
-    })
+    // // Example-4 Most Important Example 
+    // const p1 = new Promise((res,rej)=>{
+    //     setTimeout(() => {
+    //         res('Promise Resolved Value-1')
+    //     }, 5000);
+    // })
 
-    const p2 = new Promise((res,rej)=>{
-        setTimeout(() => {
-            rej('Promise Resolved Value-2')
-        }, 3000);
-    })
+    // const p2 = new Promise((res,rej)=>{
+    //     setTimeout(() => {
+    //         rej('Promise Resolved Value-2')
+    //     }, 3000);
+    // })
 
-    // With Async Await
-    async function handlePromise(){
-        console.log('Welcome to Async Await');
-        const val1 = await p1;
-        console.log('async await value-1 print');
-        console.log(val1);
+    // // With Async Await
+    // async function handlePromise(){
+    //     console.log('Welcome to Async Await');
+    //     const val1 = await p1;
+    //     console.log('async await value-1 print');
+    //     console.log(val1);
 
-        const val2 = await p2;
-        console.log('async await value-2 print');
-        console.log(val2);
-    }
-    handlePromise().catch((val)=>{
-        console.log('we can handle');
-    })
+    //     const val2 = await p2;
+    //     console.log('async await value-2 print');
+    //     console.log(val2);
+    // }
+    // handlePromise().catch((val)=>{
+    //     console.log('we can handle');
+    // })
 
 
 
