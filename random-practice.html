@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        
-        function test(){
-            c = 1;
-            let count = 1;
-            for( ; ;){
-            setTimeout(()=>{
-                    console.log('statement pass ' + c, count++);
-                },1000 * c);
-                
-                if(c === 5) break;           
-                else c++
-            }
+      function test() {
+        c = 1;
+        let count = 1;
+        for (;;) {
+          setTimeout(() => {
+            console.log("statement pass " + c, count++);
+          }, 1000 * c);
+
+          if (c === 5) break;
+          else c++;
         }
-        test()
+      }
+      test();
+
+      // Remove repeated value from filter method
+
+      let a = [3, 1, 1, 4, 5, 6, 3, 3];
+      let b = a.filter((ele, index, arr) => {
+        return arr.indexOf(ele) === index;
+      });
+      console.log(b);
     </script>
-</body>
+  </body>
 </html>

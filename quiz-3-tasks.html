@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        // Q:1
-        function a(){
-            let count = 0;
-            return function (){
-                let count = 0;
-                console.log(count);
-                count++
-            }
-        }
-        let result = a()
-        for(let i = 0; i<3; i++){
-            result()
-            result()
-        }
+      // Q:1
+      function a() {
+        let count = 0;
+        return function () {
+          let count = 0;
+          console.log(count);
+          count++;
+        };
+      }
+      let result = a();
+      for (let i = 0; i < 3; i++) {
+        result();
+        result();
+      }
 
-        (function (){
+      (function () {
         setTimeout(() => {
-            let x = 1;
-            while(x<=10){
-                console.log(x)
-           x++ ;
-            }
-          
-        
+          let x = 1;
+          while (x <= 10) {
+            console.log(x);
+            x++;
+          }
         }, 1000);
-      })()
+      })();
+
+      let arr1 = [1, 2, 3, 4];
+      let arr2 = [4, 5, 6, 7];
+      function a(...data) {
+        let b = data.filter((el, i, arr) => {
+          return arr.indexOf(el) === i;
+        });
+        console.log(b);
+        console.log(b[1]);
+      }
+      a(arr1, arr2);
     </script>
-</body>
+  </body>
 </html>
