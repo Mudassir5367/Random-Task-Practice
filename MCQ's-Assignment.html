@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Quiz Game</title>
+</head>
+<body>
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+  }
+  .header{
+    width: 100%;
+    padding: 20px;
+    background-color: indigo;
+    color: gold;
+    text-align: center;
+  }
+  .quizes {
+    width: 500px;
+    border: 1px solid #dadada;
+    padding: 40px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 6px;
+  }
+  .question {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .options label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .btn{
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    color: gold;
+    background-color: indigo;
+    width: 70%;
+    margin: auto;
+    margin: 20px;
+    border: 2px solid indigo;
+    border-radius: 10px;
+  }
+    </style>
+    <h1 class="header">Quiz Game</h1>
+  <div class="quizes">
+    <div class="question"></div>
+    <div class="options">
+    </div>
+    <div class="feedback"></div>
+    <button id="next-btn" class="btn">Next</button>
+  </div>
+
+  <script>
+    const quizes = document.querySelector('.quizes');
+    const qDisplay = document.querySelector('.question');
+    const qOption = document.querySelector('.options');
+    const feedback = document.querySelector('.feedback');
+    const nextButton = document.getElementById('next-btn');
+
+    const data = [
+      {
+        question: 'How many Province of Pakistan?',
+        options: ['1', '2', '3', '4'],
+        correctAnswer: '4',
+      },
+      {
+        question: 'What is the Capital City of Pakistan?',
+        options: ['Lahore', 'Islamabad', 'Karachi', 'Peshawar'],
+        correctAnswer: 'Islamabad',
+      },
+      {
+        question: 'What is the total population of Pakistan?',
+        options: ['18 Million', '20 Million', '23 Million', '25 Million'],
+        correctAnswer: '25 Million',
+      },
+    ];
+
+    let counter = 0;
+    let score = 0;
+
+    function displayQuestion() {
+      const currentQ = data[counter];
+      console.log(currentQ);
+      qDisplay.textContent = currentQ.question;
+      qOption.innerHTML = '';
+      
+      currentQ.options.forEach((option) => {
+        console.log('option',option);
+        const input = document.createElement('input');
+        input.type = 'radio';
+        input.name = 'answer';
+        input.value = option;
+
+        const label = document.createElement('label');
+        label.textContent = option;
+
+        qOption.appendChild(input);
+        qOption.appendChild(label);
+      });
+    }
+
+    function checkAnswer() {
+      const selectedOption = document.querySelector('input[name="answer"]:checked');
+      if (selectedOption) {
+        const userAnswer = selectedOption.value;
+        const correctAnswer = data[counter].correctAnswer;
+        if (userAnswer === correctAnswer) {
+          score++;
+          feedback.textContent = 'Correct!';
+        } else {
+          feedback.textContent = 'Wrong. The correct answer is: ' + correctAnswer;
+        }
+        nextButton.disabled = false;
+      }
+    }
+
+    function nextQuestion() {
+      counter++;
+      if (counter < data.length) {
+        displayQuestion();
+        feedback.textContent = '';
+        // nextButton.disabled = true;
+      } else {
+        showResults();
+      }
+    }
+
+    function showResults() {
+      quizes.innerHTML = '';
+      const result = document.createElement('div');  
+      result.textContent = `You scored ${score} out of ${data.length}!`;
+      quizes.appendChild(result);
+    }
+
+    displayQuestion();
+
+    nextButton.addEventListener('click', () => {
+      checkAnswer();
+      nextQuestion();
+    });
+  </script>
+</body>
+</html>
