@@ -234,6 +234,17 @@
         // }
         // abc()
         // console.log('end');
+
+
+
+        // for github
+        new Promise((resolveOuter) => {
+  resolveOuter(
+    new Promise((resolveInner) => {
+      setTimeout(resolveInner, 1000);
+    }),
+  );
+});
        
     </script>
 </body>
