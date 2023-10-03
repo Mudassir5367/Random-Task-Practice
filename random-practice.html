@@ -7,27 +7,44 @@
   </head>
   <body>
     <script>
-      function test() {
-        c = 1;
-        let count = 1;
-        for (;;) {
-          setTimeout(() => {
-            console.log("statement pass " + c, count++);
-          }, 1000 * c);
+      // function test() {
+      //   c = 1;
+      //   let count = 1;
+      //   for (;;) {
+      //     setTimeout(() => {
+      //       console.log("statement pass " + c, count++);
+      //     }, 1000 * c);
 
-          if (c === 5) break;
-          else c++;
+      //     if (c === 5) break;
+      //     else c++;
+      //   }
+      // }
+      // test();
+
+      // // Remove repeated value from filter method
+
+      // let a = [3, 1, 1, 4, 5, 6, 3, 3];
+      // let b = a.filter((ele, index, arr) => {
+      //   return arr.indexOf(ele) === index;
+      // });
+      // console.log(b);
+
+
+      // find index sum of 3 values;
+      const arr = [2,3,4,5,6,7,10] 
+      const target = 23;
+      let index = 0;
+      for(let i = 0; i<arr.length; i++){
+        for(let j = i+1; j<arr.length; j++){
+          for(let k = i+1; k<arr.length;k++){
+
+            if(arr[i] + arr[j] + arr[k] == target){
+              index = [i,j,k]
+            }
+          }
         }
       }
-      test();
-
-      // Remove repeated value from filter method
-
-      let a = [3, 1, 1, 4, 5, 6, 3, 3];
-      let b = a.filter((ele, index, arr) => {
-        return arr.indexOf(ele) === index;
-      });
-      console.log(b);
+      console.log(index);
     </script>
   </body>
 </html>
