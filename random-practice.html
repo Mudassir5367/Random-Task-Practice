@@ -10,29 +10,20 @@
 
       // Prime Number 
       function isPrime(number) {
-        if (number <= 1) {
-          return false; // 0 and 1 are not prime numbers
-        }
-      
-        if (number <= 3) {
-          return true; // 2 and 3 are prime numbers
-        }
-      
-        if (number % 2 === 0 || number % 3 === 0) {
-          return false; // Divisible by 2 or 3
-        }
-      
-        // Check for prime numbers using 6k +/- 1 optimization
-        for (let i = 5; i * i <= number; i += 6) {
-          if (number % i === 0 || number % (i + 2) === 0) {
-            return false;
-          }
-        }
-      
+       if(number < 1){
+        return false
+       }
+       if(number <= 3){
         return true;
+       }
+       if(number%2 == 0 || number % 3 == 0){
+        return false;
+       }
+       for(let i = 5; i * i <=number; i +=6){
+        if(number % i == 0 || number % (i+2) == 0) return false
+       }
+       return true;
       }
-      
-      // Test cases
       console.log(isPrime(17)); // Output: true (17 is prime)
       console.log(isPrime(15)); // Output: false (15 is not prime)
       
