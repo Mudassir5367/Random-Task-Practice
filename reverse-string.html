@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        ////////// 1 ///////////////
+
+
+//         function reverseString(inputString) {
+//     // Split the input string into an array of characters
+//     let characters = inputString.split('');
+
+//     // Reverse the array of characters
+//     let reversedCharacters = characters.reverse();
+
+//     // Join the reversed characters back into a string
+//     let reversedString = reversedCharacters.join('');
+
+//     return reversedString;
+// }
+
+// // Example usage:
+// let inputString = 'we love';
+// let reversedResult = reverseString(inputString);
+
+// console.log(reversedResult); // Output: 'evol ew'
+
+
+
+///////////////// 2 //////////////////////////// also find max string/length
+
+
+function reverseString(inputString) {
+    // Split the input string into an array of words
+    let words = inputString.split(' ');
+
+    // Reverse each word in the array
+    let reversedWords = words.map(word => word.split('').reverse().join(''));
+
+    // Join the reversed words back into a string
+    let reversedString = reversedWords.join(' ');
+
+    return reversedString;
+}
+
+function findLongestWord(inputString) {
+    // Split the input string into an array of words
+    let words = inputString.split(' ');
+
+    // Find the longest word in the array
+    let longestWord = words.reduce((longest, current) => (current.length > longest.length) ? current : longest, '');
+
+    return longestWord;
+}
+
+// Example usage:
+let inputString = 'we love programming with JavaScript';
+let reversedResult = reverseString(inputString);
+let longestWordResult = findLongestWord(inputString);
+
+console.log('Reversed String:', reversedResult); // Output: 'ew evol gnimmargorp htiw tpircSavaJ'
+console.log('Longest Word:', longestWordResult); // Output: 'programming'
+
+
+
+
+    </script>
+</body>
+</html>
